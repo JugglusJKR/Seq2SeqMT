@@ -1,0 +1,39 @@
+Read 135842 sentence pairs
+Trimmed to 10853 sentence pairs
+Counting words...
+Counted words:
+fra 4489
+eng 2925
+['vous etes la doyenne .', 'you re the oldest .']
+5m 10s (- 72m 25s) (5000 6%) 2.8948
+10m 59s (- 71m 27s) (10000 13%) 2.3332
+16m 49s (- 67m 17s) (15000 20%) 2.0135
+22m 23s (- 61m 33s) (20000 26%) 1.7792
+27m 31s (- 55m 2s) (25000 33%) 1.5930
+32m 52s (- 49m 18s) (30000 40%) 1.4046
+38m 25s (- 43m 54s) (35000 46%) 1.2789
+43m 30s (- 38m 4s) (40000 53%) 1.1449
+48m 41s (- 32m 27s) (45000 60%) 1.0062
+53m 57s (- 26m 58s) (50000 66%) 0.9246
+59m 3s (- 21m 28s) (55000 73%) 0.8402
+64m 9s (- 16m 2s) (60000 80%) 0.7797
+69m 10s (- 10m 38s) (65000 86%) 0.6954
+74m 13s (- 5m 18s) (70000 93%) 0.6572
+79m 14s (- 0m 0s) (75000 100%) 0.5959
+
+
+
+
+
+
+
+
+
+ def build_tokenizer(self):
+        """Return a function that splits a string into a sequence of tokens"""
+        if self.tokenizer is not None:
+            return self.tokenizer
+        token_pattern = re.compile(self.token_pattern)
+        return lambda doc: token_pattern.findall(doc)
+
+(?u)\w+[\s\`]\w+
